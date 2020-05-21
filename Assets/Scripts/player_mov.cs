@@ -23,19 +23,19 @@ public class player_mov : MonoBehaviour
     {   
         if ( Input.GetKey(KeyCode.W) )
         {
-            rb.AddForce(0,0, forward_force * Time.deltaTime);
+            rb.AddForce(0,0, forward_force * Time.deltaTime, ForceMode.VelocityChange);
         }
         if ( Input.GetKey(KeyCode.S) )
         {
-            rb.AddForce(0,0, -forward_force * Time.deltaTime);
+            rb.AddForce(0,0, -forward_force * Time.deltaTime, ForceMode.VelocityChange);
         }
         if ( Input.GetKey(KeyCode.D) )
         {
-            rb.AddForce(side_force * Time.deltaTime, 0, 0);
+            rb.AddForce(side_force * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
         if ( Input.GetKey(KeyCode.A) )
         {
-            rb.AddForce(-side_force * Time.deltaTime, 0, 0);
+            rb.AddForce(-side_force * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
     }
