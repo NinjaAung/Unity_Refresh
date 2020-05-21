@@ -24,22 +24,18 @@ public class player_mov : MonoBehaviour
         if ( Input.GetKey(KeyCode.W) )
         {
             rb.AddForce(0,0, forward_force * Time.deltaTime);
-            Debug.Log("Moving Forwards");
         }
         if ( Input.GetKey(KeyCode.S) )
         {
             rb.AddForce(0,0, -forward_force * Time.deltaTime);
-            Debug.Log("Moving Backwards");
         }
         if ( Input.GetKey(KeyCode.D) )
         {
             rb.AddForce(side_force * Time.deltaTime, 0, 0);
-            Debug.Log("Moving Right");
         }
         if ( Input.GetKey(KeyCode.A) )
         {
             rb.AddForce(-side_force * Time.deltaTime, 0, 0);
-            Debug.Log("Moving Left");
         }
 
     }
