@@ -17,11 +17,11 @@ public class player_mov : MonoBehaviour
     void Update()
     {
         current_speed = 0.0f; 
-        if ( Input.GetKey(KeyCode.D) )
+        if ( Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) )
         {
             current_speed = side_force;
         } 
-        else if ( Input.GetKey(KeyCode.A) )
+        else if ( Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) )
         {
             current_speed = -side_force;
         }
@@ -31,7 +31,7 @@ public class player_mov : MonoBehaviour
     // Fixed Update is prefered for calculating physics
     void FixedUpdate() 
     {   
-        rb.AddForce(0,0,forward_force * Time.deltaTime);
+        rb.AddForce(0,0,forward_force * Time.deltaTime, ForceMode.Force);
         rb.AddForce(current_speed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
     }
 }
